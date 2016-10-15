@@ -1,0 +1,74 @@
+﻿@model FurnitureDesignArchive.Models.Furniture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Furniture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FurnitureName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FurnitureName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FurnitureType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FurnitureType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FurnitureImg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FurnitureImg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoardFootEst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoardFootEst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartList)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartList)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TimeLevel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TimeLevel)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdditionalNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdditionalNotes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
