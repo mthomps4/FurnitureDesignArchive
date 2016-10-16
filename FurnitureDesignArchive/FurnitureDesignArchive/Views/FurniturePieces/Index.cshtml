@@ -15,10 +15,13 @@
             @Html.DisplayNameFor(model => model.FurnitureName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FurnitureType)
+            @Html.DisplayNameFor(model => model.FurnitureImg)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FurnitureImg)
+            @Html.DisplayNameFor(model => model.furnitureType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.buildLevel)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.BoardFootEst)
@@ -27,10 +30,10 @@
             @Html.DisplayNameFor(model => model.PartList)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeLevel)
+            @Html.DisplayNameFor(model => model.AdditionalNotes)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdditionalNotes)
+            @Html.DisplayNameFor(model => model.CompletedBefore)
         </th>
         <th></th>
     </tr>
@@ -41,10 +44,13 @@
             @Html.DisplayFor(modelItem => item.FurnitureName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FurnitureType)
+            @Html.DisplayFor(modelItem => item.FurnitureImg)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FurnitureImg)
+            @Html.DisplayFor(modelItem => item.furnitureType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.buildLevel)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.BoardFootEst)
@@ -53,10 +59,10 @@
             @Html.DisplayFor(modelItem => item.PartList)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeLevel)
+            @Html.DisplayFor(modelItem => item.AdditionalNotes)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AdditionalNotes)
+            @Html.DisplayFor(modelItem => item.CompletedBefore)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FurnitureID }) |
