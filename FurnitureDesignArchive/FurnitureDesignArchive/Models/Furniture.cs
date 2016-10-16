@@ -25,13 +25,31 @@ namespace FurnitureDesignArchive.Models
         }
 
         public int FurnitureID { get; set; }
+
+        [Required]
+        [Display(Name = "Furniture Name")]
         public string FurnitureName { get; set; }
+
+        [Display(Name = "Image")]
         public string FurnitureImg { get; set; } //URL string 
+
+        [Display(Name = "Build Level")]
         public IntensityLevel buildLevel { get; set; }
+
+        [Required]
+        [Display(Name = "Furniture Type")]
         public FurnitureType furnitureType { get; set; }
+
+        [Display(Name = "Board Foot Estimate")]
         public double BoardFootEst { get; set; } //12.5 BF
+
+        [Display(Name = "Part List")]
         public string PartList { get; set; } //Explode string "Part: ..." 
+
+        [Display(Name = "Additional Notes")]
         public string AdditionalNotes { get; set; }
+
+        [Display(Name = "Completed Before")]
         public bool CompletedBefore { get; set; }
     }
 

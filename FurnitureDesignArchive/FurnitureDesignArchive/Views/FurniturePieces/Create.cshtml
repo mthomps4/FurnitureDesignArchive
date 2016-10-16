@@ -40,7 +40,7 @@
                     new SelectList(Enum.GetValues(typeof(Furniture.FurnitureType))),
                     "Select Type",
                     new {@class = "form-control" })
-
+              @Html.ValidationMessageFor(model => model.furnitureType, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -61,6 +61,7 @@
                         Furniture.IntensityLevel.Hard) @Furniture.IntensityLevel.Hard
                     </label>
                 </div>
+            @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
             </div>
 
         <div class="form-group">
