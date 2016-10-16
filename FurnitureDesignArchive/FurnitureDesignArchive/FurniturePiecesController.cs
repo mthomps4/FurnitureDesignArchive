@@ -46,7 +46,7 @@ namespace FurnitureDesignArchive
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FurnitureID,FurnitureName,FurnitureType,FurnitureImg,BoardFootEst,PartList,TimeLevel,AdditionalNotes")] Furniture furniture)
+        public ActionResult Create([Bind(Include = "FurnitureID,FurnitureName,FurnitureImg,BoardFootEst,PartList,AdditionalNotes,CompletedBefore")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
@@ -54,7 +54,6 @@ namespace FurnitureDesignArchive
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             return View(furniture);
         }
 
@@ -78,7 +77,7 @@ namespace FurnitureDesignArchive
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FurnitureID,FurnitureName,FurnitureType,FurnitureImg,BoardFootEst,PartList,TimeLevel,AdditionalNotes")] Furniture furniture)
+        public ActionResult Edit([Bind(Include = "FurnitureID,FurnitureName,FurnitureImg,BoardFootEst,PartList,AdditionalNotes,CompletedBefore")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
