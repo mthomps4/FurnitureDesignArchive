@@ -176,6 +176,7 @@
     <Content Include="Views\FurniturePieces\Details.cshtml" />
     <Content Include="Views\FurniturePieces\Edit.cshtml" />
     <Content Include="Views\FurniturePieces\Index.cshtml" />
+    <Content Include="Views\Shared\_FurnitureFields.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
