@@ -11,19 +11,19 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model => model.FurnitureImg)
+        </dt>
+
+        <dd>
+            <img src="@Html.DisplayFor(model => model.FurnitureImg)" width="200px" height="200px"/>
+        </dd>
+        
+        <dt>
             @Html.DisplayNameFor(model => model.FurnitureName)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.FurnitureName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FurnitureImg)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FurnitureImg)
         </dd>
 
         <dt>
