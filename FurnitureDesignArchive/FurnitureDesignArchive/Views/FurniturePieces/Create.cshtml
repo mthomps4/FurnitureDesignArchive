@@ -38,7 +38,7 @@
             <div class="col-md-10">
               @Html.DropDownListFor(model => model.furnitureType, 
                     new SelectList(Enum.GetValues(typeof(Furniture.FurnitureType))),
-                    "Select Type",
+                    "",
                     new {@class = "form-control" })
               @Html.ValidationMessageFor(model => model.furnitureType, "", new { @class = "text-danger" })
             </div>
@@ -59,9 +59,10 @@
                 </label><label class="radio-inline">
                     @Html.RadioButtonFor(m => m.buildLevel,
                         Furniture.IntensityLevel.Hard) @Furniture.IntensityLevel.Hard
-                    </label>
+                </label>
+
+                @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
                 </div>
-            @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
             </div>
 
         <div class="form-group">
@@ -75,7 +76,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PartList, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PartList, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.PartList,14,40, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.PartList, "", new { @class = "text-danger" })
             </div>
         </div>

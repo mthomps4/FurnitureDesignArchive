@@ -21,6 +21,7 @@ namespace FurnitureDesignArchive.Models
             Tables,
             Seating,
             Containers,
+            Tools,
             Misc
         }
 
