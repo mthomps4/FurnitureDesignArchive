@@ -1,4 +1,5 @@
 ﻿@model FurnitureDesignArchive.Models.Furniture
+    @using FurnitureDesignArchive.Models
 
 @{
     ViewBag.Title = "Create";
@@ -35,7 +36,7 @@
             @Html.LabelFor(model => model.furnitureType, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
               @Html.DropDownListFor(model => model.furnitureType, 
-                    new SelectList(Enum.GetValues(typeof(FurnitureDesignArchive.Models.Furniture.FurnitureType))),
+                    new SelectList(Enum.GetValues(typeof(Furniture.FurnitureType))),
                     "Select Type",
                     new {@class = "form-control" })
 
@@ -43,20 +44,20 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m => m.buildLevel, new { @class = "control-label" })
-            <div>
+            @Html.LabelFor(m => m.buildLevel, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.buildLevel,
-                        FurnitureDesignArchive.Models.Furniture.IntensityLevel.Beginner) @FurnitureDesignArchive.Models.Furniture.IntensityLevel.Beginner
+                        Furniture.IntensityLevel.Beginner) @Furniture.IntensityLevel.Beginner
                  </label>
                 
                 <label class="radio-inline">
                     @Html.RadioButtonFor(m => m.buildLevel,
-                        FurnitureDesignArchive.Models.Furniture.IntensityLevel.Intermediate) @FurnitureDesignArchive.Models.Furniture.IntensityLevel.Intermediate
+                        Furniture.IntensityLevel.Intermediate) @Furniture.IntensityLevel.Intermediate
                     
                 </label><label class="radio-inline">
                     @Html.RadioButtonFor(m => m.buildLevel,
-                        FurnitureDesignArchive.Models.Furniture.IntensityLevel.Hard) @FurnitureDesignArchive.Models.Furniture.IntensityLevel.Hard
+                        Furniture.IntensityLevel.Hard) @Furniture.IntensityLevel.Hard
                     </label>
                 </div>
             </div>
