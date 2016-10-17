@@ -7,6 +7,7 @@
 
 <h2>Edit</h2>
 
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -34,17 +35,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.furnitureType, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.furnitureType,
-                    new SelectList(Enum.GetValues(typeof(Furniture.FurnitureType))),
-                    "",
-                    new { @class = "form-control" })
-
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(m => m.buildLevel, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <label class="radio-inline">
@@ -60,22 +50,24 @@
                         @Html.RadioButtonFor(m => m.buildLevel,
                         Furniture.IntensityLevel.Hard) @Furniture.IntensityLevel.Hard
                     </label>
+
+                    @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
                 </div>
             </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.furnitureType, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EnumDropDownListFor(model => model.furnitureType, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.furnitureType, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.BoardFootEst, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.BoardFootEst, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.BoardFootEst, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PartList, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.TextAreaFor(model => model.PartList, 14, 40, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.PartList, "", new { @class = "text-danger" })
             </div>
         </div>
 

@@ -10,17 +10,17 @@ using FurnitureDesignArchive.Models;
 
 namespace FurnitureDesignArchive
 {
-    public class FurniturePiecesController : Controller
+    public class FurnituresController : Controller
     {
         private FurnitureContext db = new FurnitureContext();
 
-        // GET: FurniturePieces
+        // GET: Furnitures
         public ActionResult Index()
         {
             return View(db.FurniturePieces.ToList());
         }
 
-        // GET: FurniturePieces/Details/5
+        // GET: Furnitures/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,18 +35,18 @@ namespace FurnitureDesignArchive
             return View(furniture);
         }
 
-        // GET: FurniturePieces/Create
+        // GET: Furnitures/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: FurniturePieces/Create
+        // POST: Furnitures/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FurnitureID,FurnitureName,furnitureType,buildLevel,FurnitureImg,BoardFootEst,PartList,AdditionalNotes,CompletedBefore")] Furniture furniture)
+        public ActionResult Create([Bind(Include = "FurnitureID,FurnitureName,FurnitureImg,buildLevel,furnitureType,BoardFootEst,AdditionalNotes,CompletedBefore")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
@@ -54,10 +54,11 @@ namespace FurnitureDesignArchive
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             return View(furniture);
         }
 
-        // GET: FurniturePieces/Edit/5
+        // GET: Furnitures/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -72,12 +73,12 @@ namespace FurnitureDesignArchive
             return View(furniture);
         }
 
-        // POST: FurniturePieces/Edit/5
+        // POST: Furnitures/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FurnitureID,FurnitureName,furnitureType,buildLevel,FurnitureImg,BoardFootEst,PartList,AdditionalNotes,CompletedBefore")] Furniture furniture)
+        public ActionResult Edit([Bind(Include = "FurnitureID,FurnitureName,FurnitureImg,buildLevel,furnitureType,BoardFootEst,AdditionalNotes,CompletedBefore")] Furniture furniture)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +89,7 @@ namespace FurnitureDesignArchive
             return View(furniture);
         }
 
-        // GET: FurniturePieces/Delete/5
+        // GET: Furnitures/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -103,7 +104,7 @@ namespace FurnitureDesignArchive
             return View(furniture);
         }
 
-        // POST: FurniturePieces/Delete/5
+        // POST: Furnitures/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

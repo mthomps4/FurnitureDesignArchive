@@ -44,19 +44,28 @@ namespace FurnitureDesignArchive.Models
         [Display(Name = "Board Foot Estimate")]
         public double BoardFootEst { get; set; } //12.5 BF
 
-        [Display(Name = "Part List")]
-        public string PartList { get; set; } //Explode string "Part: ..." 
-
         [Display(Name = "Additional Notes")]
         public string AdditionalNotes { get; set; }
 
         [Display(Name = "Completed Before")]
         public bool CompletedBefore { get; set; }
+
+
+        //Furniture Parts Table 
+        [Display(Name = "Furniture Parts")]
+        public virtual ICollection<FurniturePart> FurnitureParts { get; set; }
+
+        public Furniture()
+        {
+            this.FurnitureParts = new List<FurniturePart>();
+        }
+
     }
 
     public class FurnitureContext : DbContext
     {
         public DbSet<Furniture> FurniturePieces { get; set; }
+        public DbSet<FurniturePart> FurnitureParts { get; set; }
     }
 
 

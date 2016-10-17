@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<FurnitureDesignArchive.Models.Furniture>
 
 @{
-    ViewBag.Title = "Main Page";
+    ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
@@ -18,16 +18,13 @@
             @Html.DisplayNameFor(model => model.FurnitureImg)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.furnitureType)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.buildLevel)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.BoardFootEst)
+            @Html.DisplayNameFor(model => model.furnitureType)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PartList)
+            @Html.DisplayNameFor(model => model.BoardFootEst)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AdditionalNotes)
@@ -44,19 +41,16 @@
             @Html.DisplayFor(modelItem => item.FurnitureName)
         </td>
         <td>
-            <img src="@Html.DisplayFor(modelItem => item.FurnitureImg)" width="40px" height="40px"/>
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.furnitureType)
+            <img src="@Html.DisplayFor(modelItem => item.FurnitureImg)" width="40px" height="40px" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.buildLevel)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BoardFootEst)
+            @Html.DisplayFor(modelItem => item.furnitureType)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PartList)
+            @Html.DisplayFor(modelItem => item.BoardFootEst)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AdditionalNotes)

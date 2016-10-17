@@ -16,7 +16,7 @@ namespace FurnitureDesignArchive
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "FurniturePieces", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Furnitures", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
