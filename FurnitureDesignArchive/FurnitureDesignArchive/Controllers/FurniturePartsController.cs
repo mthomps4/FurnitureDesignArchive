@@ -46,7 +46,7 @@ namespace FurnitureDesignArchive
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "FurniturePartId,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
+        public ActionResult Create([Bind(Include = "FurniturePartId,FurnitureIndex,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace FurnitureDesignArchive
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "FurniturePartId,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
+        public ActionResult Edit([Bind(Include = "FurniturePartId,FurnitureIndex,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
         {
             if (ModelState.IsValid)
             {

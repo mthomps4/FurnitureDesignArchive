@@ -9,8 +9,7 @@ namespace FurnitureDesignArchive.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "FurnitureDesignArchive.Models.FurnitureContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(FurnitureDesignArchive.Models.FurnitureContext context)

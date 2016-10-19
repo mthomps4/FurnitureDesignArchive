@@ -3,6 +3,7 @@
     public class FurniturePart
     {
         public int FurniturePartId { get; set; }
+        public int FurnitureIndex { get; set; } // Passed from FurnitureID
         public string PartName { get; set; }
         public int PartCount { get; set; }
         public double Width { get; set; }
