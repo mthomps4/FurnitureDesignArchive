@@ -50,16 +50,6 @@ namespace FurnitureDesignArchive.Models
         [Display(Name = "Completed Before")]
         public bool CompletedBefore { get; set; }
 
-
-        //Furniture Parts Table 
-        [Display(Name = "Furniture Parts")]
-        public virtual ICollection<FurniturePart> FurnitureParts { get; set; }
-
-        public Furniture()
-        {
-            this.FurnitureParts = new List<FurniturePart>();
-        }
-
     }
 
     public class FurnitureContext : DbContext

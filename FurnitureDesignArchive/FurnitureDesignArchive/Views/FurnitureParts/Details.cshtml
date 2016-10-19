@@ -1,0 +1,82 @@
+﻿@model FurnitureDesignArchive.Models.FurniturePart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>FurniturePart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PartName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Width)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Width)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoardThickness)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoardThickness)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.partBoardFoot)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.partBoardFoot)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartNotes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartNotes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PartImgUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PartImgUrl)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FurniturePartId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

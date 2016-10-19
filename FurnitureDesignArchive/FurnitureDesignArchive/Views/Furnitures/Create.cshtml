@@ -1,6 +1,4 @@
 ﻿@model FurnitureDesignArchive.Models.Furniture
-@using FurnitureDesignArchive.Models
-
 
 @{
     ViewBag.Title = "Create";
@@ -34,25 +32,12 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(m => m.buildLevel, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.buildLevel, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <label class="radio-inline">
-                    @Html.RadioButtonFor(m => m.buildLevel,
-                        Furniture.IntensityLevel.Beginner) @Furniture.IntensityLevel.Beginner
-                    </label>
-
-                    <label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.buildLevel,
-                        Furniture.IntensityLevel.Intermediate) @Furniture.IntensityLevel.Intermediate
-
-                    </label><label class="radio-inline">
-                        @Html.RadioButtonFor(m => m.buildLevel,
-                        Furniture.IntensityLevel.Hard) @Furniture.IntensityLevel.Hard
-                    </label>
-
-                    @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
-                </div>
+                @Html.EnumDropDownListFor(model => model.buildLevel, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.buildLevel, "", new { @class = "text-danger" })
             </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.furnitureType, htmlAttributes: new { @class = "control-label col-md-2" })

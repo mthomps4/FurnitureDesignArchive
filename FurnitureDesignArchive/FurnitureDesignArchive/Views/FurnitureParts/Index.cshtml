@@ -1,0 +1,75 @@
+﻿@model IEnumerable<FurnitureDesignArchive.Models.FurniturePart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PartName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Width)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Length)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoardThickness)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.partBoardFoot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartNotes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PartImgUrl)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Width)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Length)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoardThickness)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.partBoardFoot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartNotes)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PartImgUrl)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FurniturePartId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FurniturePartId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FurniturePartId })
+        </td>
+    </tr>
+}
+
+</table>
