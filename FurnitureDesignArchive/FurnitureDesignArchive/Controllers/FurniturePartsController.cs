@@ -39,6 +39,7 @@ namespace FurnitureDesignArchive
         [HttpGet]
         public ActionResult Create(Furniture furniture, FurniturePart model)
         {
+            //TODO: If part model not set?? 
             model.FurnitureIndex = furniture.FurnitureID;
             model.FurniturePieceName = furniture.FurnitureName;
             return View(model);
@@ -49,16 +50,58 @@ namespace FurnitureDesignArchive
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(int FurnitureId, string FurnitureName, [Bind(Include = "FurniturePartId,FurnitureIndex,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
+        public ActionResult Create(string submit, int FurnitureId, string FurnitureName, [Bind(Include = "FurniturePartId,FurnitureIndex,PartName,PartCount,Width,Length,BoardThickness,partBoardFoot,PartNotes,PartImgUrl")] FurniturePart furniturePart)
         {
-            if (ModelState.IsValid)
-            {
-                furniturePart.FurniturePieceName = FurnitureName; 
-                furniturePart.FurnitureIndex = FurnitureId;
-                db.FurnitureParts.Add(furniturePart);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            //if (ModelState.IsValid)
+            //{
+                switch (submit)
+                {
+                case "Add Another Part":
+                        if (ModelState.IsValid)
+                        {
+                            furniturePart.FurniturePieceName = FurnitureName;
+                            furniturePart.FurnitureIndex = FurnitureId;
+                            db.FurnitureParts.Add(furniturePart);
+                            db.SaveChanges();
+                            
+
+                        furniturePart.FurniturePieceName = FurnitureName;
+                        furniturePart.FurnitureIndex = FurnitureId;
+                        //Zero Out Other Values for return? 
+                        furniturePart.PartName = "";
+                        furniturePart.PartCount = 0;
+                        furniturePart.Width = 0;
+                        furniturePart.Length = 0;
+                        furniturePart.BoardThickness = 0;
+                        furniturePart.partBoardFoot = 0;
+                        furniturePart.PartNotes = "";
+                        furniturePart.PartImgUrl = "";
+
+                        return RedirectToAction("Create", "FurnitureParts", furniturePart);
+                        }
+                    break;
+
+                case "Finished":
+                        if (ModelState.IsValid)
+                        {
+                            furniturePart.FurniturePieceName = FurnitureName;
+                            furniturePart.FurnitureIndex = FurnitureId;
+                            db.FurnitureParts.Add(furniturePart);
+                            db.SaveChanges();
+                            return RedirectToAction("Index");
+                        }
+                    break;
+
+                default:
+                    break;
+
+                }
+                //furniturePart.FurniturePieceName = FurnitureName; 
+                //furniturePart.FurnitureIndex = FurnitureId;
+                //db.FurnitureParts.Add(furniturePart);
+                //db.SaveChanges();
+                //return RedirectToAction("Index");
+            //}
 
             return View(furniturePart);
         }

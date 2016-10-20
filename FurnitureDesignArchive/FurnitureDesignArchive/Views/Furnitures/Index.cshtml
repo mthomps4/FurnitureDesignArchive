@@ -18,17 +18,18 @@
             @Html.DisplayNameFor(model => model.FurnitureImg)
         </th>
         <th>
+             @Html.DisplayNameFor(model => model.furnitureType)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.buildLevel)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.furnitureType)
-        </th>
-        <th>
+
+        @*<th>
             @Html.DisplayNameFor(model => model.BoardFootEst)
-        </th>
-        <th>
+        </th>*@
+        @*<th>
             @Html.DisplayNameFor(model => model.AdditionalNotes)
-        </th>
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.CompletedBefore)
         </th>
@@ -44,17 +45,18 @@
             @Html.DisplayFor(modelItem => item.FurnitureImg)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.buildLevel)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.furnitureType)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.buildLevel)
+        </td>
+
+        @*<td>
             @Html.DisplayFor(modelItem => item.BoardFootEst)
-        </td>
-        <td>
+        </td>*@
+        @*<td>
             @Html.DisplayFor(modelItem => item.AdditionalNotes)
-        </td>
+        </td>*@
         <td>
             @Html.DisplayFor(modelItem => item.CompletedBefore)
         </td>
