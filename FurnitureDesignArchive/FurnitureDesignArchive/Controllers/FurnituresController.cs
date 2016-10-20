@@ -52,7 +52,7 @@ namespace FurnitureDesignArchive
             {
                 db.FurniturePieces.Add(furniture);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "FurnitureParts", furniture);
             }
 
             return View(furniture);
