@@ -47,9 +47,9 @@ namespace FurnitureDesignArchive
                 return View(furnitureParts);
             }
             else {
-                furniture.FurnitureID = furnitureParts.FurnitureIndex;
-                furniture.FurnitureName = furnitureParts.FurniturePieceName;
-                return View(furnitureParts);
+                //Redirect using TempData 
+                //TODO: MSG Adding another Part Failed. 
+                return View("Index", "furnitures");
             }
         }
 
@@ -66,27 +66,13 @@ namespace FurnitureDesignArchive
                 case "Add Another Part":
                         if (ModelState.IsValid)
                         {
-                            //furniturePart.FurniturePieceName = furniture.FurnitureName;
-                            //furniturePart.FurnitureIndex = furniture.FurnitureID;
+                            furniturePart.FurniturePieceName = furniture.FurnitureName; //Set Name and ID for Parts DB 
+                            furniturePart.FurnitureIndex = furniture.FurnitureID;
                             db.FurnitureParts.Add(furniturePart);
                             db.SaveChanges();
 
-
-                        furniturePart.FurniturePieceName = furniture.FurnitureName;
-                        furniturePart.FurnitureIndex = furniture.FurnitureID;
-
-                        //Zero Out Other Values for return? 
-                        furniturePart.PartName = "";
-                        furniturePart.PartCount = 0;
-                        furniturePart.Width = 0;
-                        furniturePart.Length = 0;
-                        furniturePart.BoardThickness = 0;
-                        furniturePart.partBoardFoot = 0;
-                        furniturePart.PartNotes = "";
-                        furniturePart.PartImgUrl = "";
-
-                        return RedirectToAction("Create", "FurnitureParts", furniturePart);
-                        }
+                            return RedirectToAction("create", "FurnitureParts", furniture); //Returns Furniture for ID and Name 
+                    }
                     break;
 
                 case "Finished":
@@ -96,13 +82,16 @@ namespace FurnitureDesignArchive
                             furniturePart.FurnitureIndex = furniture.FurnitureID;
                             db.FurnitureParts.Add(furniturePart);
                             db.SaveChanges();
-                            return RedirectToAction("Index");
+                            return RedirectToAction("Index", "furnitures");
                         }
                     break;
+                case "Cancel":
+                    {
+                        return RedirectToAction("Index", "furnitures");
+                    }
 
                 default:
                     break;
-
                 }
       
             return View(furniturePart);
