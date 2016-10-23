@@ -72,21 +72,23 @@
 
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")  |
 </p>
 
 
 
 
 <h4> Furniture Parts List </h4>
+<p>@Html.ActionLink("Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName}, null)</p>
+
+
 <hr />
 @{
-    //var getParts = ViewBag.Listdata as ICollection<FurniturePart>;
-    var getParts = ViewBag.Parts;
+    var getParts = ViewBag.Parts;//From Controller Furnitures/Details 
     foreach (var item in getParts)
     {
         int id = item.FurniturePartId;
-        if (item.FurnitureIndex == Model.FurnitureID)
+        if(item.FurnitureIndex == Model.FurnitureID)
         {
             <p>@item.FurnitureIndex  </p>
             <p>@item.FurniturePartId</p>
@@ -96,11 +98,6 @@
 
             @Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)
             <br />
-
-        }
-        else
-        {
-            <h1> No Parts Here</h1>
         }
     }
 }

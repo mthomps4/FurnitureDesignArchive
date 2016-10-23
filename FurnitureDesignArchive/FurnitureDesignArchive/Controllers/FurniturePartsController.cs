@@ -83,7 +83,8 @@ namespace FurnitureDesignArchive
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
                         db.FurnitureParts.Add(furniturePart);
                         db.SaveChanges();
-                        return RedirectToAction("Index", "furnitures");
+                        var id = furniturePart.FurnitureIndex; //FurnitureID = FurnitureIndex 
+                        return RedirectToAction("Details", "Furnitures", new { id }); //Back to Furniture Details View
                     }
                     break;
 
@@ -125,9 +126,10 @@ namespace FurnitureDesignArchive
             {
                 db.Entry(furniturePart).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                var id = furniturePart.FurnitureIndex; //FurnitureID = FurnitureIndex 
+                return RedirectToAction("Details", "Furnitures", new {id}); //Back to Furniture Details View 
             }
-            return View(furniturePart);
+            return View("Index", "Furnitures");
         }
 
         // GET: FurnitureParts/Delete/5
