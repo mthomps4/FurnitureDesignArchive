@@ -1,4 +1,5 @@
 ﻿@model FurnitureDesignArchive.Models.Furniture
+@using FurnitureDesignArchive.Models
 
 @{
     ViewBag.Title = "Details";
@@ -68,7 +69,38 @@
 
     </dl>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+
+
+<h4> Furniture Parts List </h4>
+<hr />
+@{
+    //var getParts = ViewBag.Listdata as ICollection<FurniturePart>;
+    var getParts = ViewBag.Parts;
+    foreach (var item in getParts)
+    {
+        int id = item.FurniturePartId;
+        if (item.FurnitureIndex == Model.FurnitureID)
+        {
+            <p>@item.FurnitureIndex  </p>
+            <p>@item.FurniturePartId</p>
+            <p>@item.PartName </p>
+            <p>@item.Width</p>
+            <p>@item.Length</p>
+
+            @Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)
+            <br />
+
+        }
+        else
+        {
+            <h1> No Parts Here</h1>
+        }
+    }
+}
