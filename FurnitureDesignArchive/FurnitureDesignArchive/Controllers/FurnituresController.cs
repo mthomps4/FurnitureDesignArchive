@@ -32,6 +32,7 @@ namespace FurnitureDesignArchive
             {
                 return HttpNotFound();
             }
+            ViewBag.Parts = db.FurnitureParts.ToList();
             return View(furniture);
         }
 

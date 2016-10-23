@@ -150,6 +150,7 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="TaskList\TODO.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
