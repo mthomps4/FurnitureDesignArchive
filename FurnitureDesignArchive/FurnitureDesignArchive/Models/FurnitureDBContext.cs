@@ -8,7 +8,7 @@ namespace FurnitureDesignArchive.Models
 {
     // example entity framework create database if not exists seed data
     // http://www.entityframeworktutorial.net/code-first/database-initialization-strategy-in-code-first.aspx
-
+    //https://www.asp.net/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application
     public class FurnitureDBContext : DbContext
     {
 
