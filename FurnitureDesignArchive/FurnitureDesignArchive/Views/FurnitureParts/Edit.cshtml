@@ -17,13 +17,13 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.FurniturePartId)
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.FurnitureIndex, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DisplayFor(model => model.FurnitureIndex, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.FurnitureIndex, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.FurnitureIndex, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.PartName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -72,7 +72,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.partBoardFoot, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DisplayFor(model => model.partBoardFoot, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.partBoardFoot, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.partBoardFoot, "", new { @class = "text-danger" })
             </div>
         </div>
