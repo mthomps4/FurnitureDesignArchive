@@ -3,7 +3,21 @@
 
 @{
     ViewBag.Title = "Details";
+
+
+        double TotalBoardFoot = 0;
+        var getPartsListForBoardFoot = ViewBag.Parts;//From Controller Furnitures/Details
+        foreach (var item in getPartsListForBoardFoot)
+        {
+            if (item.FurnitureIndex == Model.FurnitureID)
+            {
+                TotalBoardFoot += @item.partBoardFoot;
+            }
+        }
+
+
 }
+
 
 <h2>Details</h2>
 
@@ -112,7 +126,8 @@
                     <td>@item.partBoardFoot</td>
                     <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
                 </tr>
-
             }
         }
     }
+
+<h1>Total Board Foot = @TotalBoardFoot</h1>
