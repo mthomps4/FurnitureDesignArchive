@@ -12,7 +12,7 @@ namespace FurnitureDesignArchive
 {
     public class FurniturePartsController : Controller
     {
-        private FurnitureContext db = new FurnitureContext();
+        private FurnitureDBContext db = new FurnitureDBContext();
 
         // GET: FurnitureParts
         public ActionResult Index()

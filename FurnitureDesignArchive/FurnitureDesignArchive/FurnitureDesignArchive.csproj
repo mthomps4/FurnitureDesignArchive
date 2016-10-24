@@ -170,6 +170,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Furniture.cs" />
+    <Compile Include="Models\FurnitureDBContext.cs" />
     <Compile Include="Models\FurniturePart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
