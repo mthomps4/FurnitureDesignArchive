@@ -69,6 +69,10 @@ namespace FurnitureDesignArchive
                     {
                         furniturePart.FurniturePieceName = furniture.FurnitureName; //Set Name and ID for Parts DB 
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
+                        furniturePart.partBoardFoot = 0;
+                        double BoardFoot = ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness)/144);
+                        BoardFoot = Math.Round(BoardFoot, 3);
+                        furniturePart.partBoardFoot = BoardFoot;
                         db.FurnitureParts.Add(furniturePart);
                         db.SaveChanges();
 
@@ -125,6 +129,13 @@ namespace FurnitureDesignArchive
             if (ModelState.IsValid)
             {
                 db.Entry(furniturePart).State = EntityState.Modified;
+
+                furniturePart.partBoardFoot = 0;
+                double BoardFoot = ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
+                BoardFoot = Math.Round(BoardFoot, 3);
+                furniturePart.partBoardFoot = BoardFoot;
+
+
                 db.SaveChanges();
                 var id = furniturePart.FurnitureIndex; //FurnitureID = FurnitureIndex 
                 return RedirectToAction("Details", "Furnitures", new {id}); //Back to Furniture Details View 
