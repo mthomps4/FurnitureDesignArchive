@@ -85,6 +85,7 @@ namespace FurnitureDesignArchive
                             return RedirectToAction("Index", "furnitures");
                         }
                     break;
+
                 case "Cancel":
                     {
                         return RedirectToAction("Index", "furnitures");
