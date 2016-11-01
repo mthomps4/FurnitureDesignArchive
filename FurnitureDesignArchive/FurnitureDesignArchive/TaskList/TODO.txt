@@ -1,0 +1,38 @@
+﻿Update Part Board Foot Variable with math instead of user input 
+
+Remove Display for Part Board Foot on Forms 
+
+Remove Display for Furniture Index on Parts Form 
+
+Remove Part Notes and Image -- Will not use 
+
+Create a Cancel Button on the Parts Creation Page (Check Edit Pages)
+
+Reorder Parts Form 
+Name, Width, Length, Thickness, Count 
+
+Template Parts List on Furniture Details Page 
+
+Create Flickr Image Links for Furniture 
+
+Transition Notes Field to TextArea (Furniture and Parts // Create and Edit)
+
+Do I need a Parts Index Page?? 
+
+DELETE CONFIRMATION PAGE 
+-- Show Both Parts and Furniture Description
+-- Delete All Parts with Furniture on "Delete" 
+
+Rename All Controller Fields 
+
+Name Routes 
+
+Filtering User Input
+
+
+
+
+MAKE IT PRETTY!! 
+
+CSS TODO: 
+

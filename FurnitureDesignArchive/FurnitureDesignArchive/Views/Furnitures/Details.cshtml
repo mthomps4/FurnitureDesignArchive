@@ -1,8 +1,23 @@
 ﻿@model FurnitureDesignArchive.Models.Furniture
+@using FurnitureDesignArchive.Models
 
 @{
     ViewBag.Title = "Details";
+
+
+        double TotalBoardFoot = 0;
+        var getPartsListForBoardFoot = ViewBag.Parts;//From Controller Furnitures/Details
+        foreach (var item in getPartsListForBoardFoot)
+        {
+            if (item.FurnitureIndex == Model.FurnitureID)
+            {
+                TotalBoardFoot += @item.partBoardFoot;
+            }
+        }
+
+
 }
+
 
 <h2>Details</h2>
 
@@ -68,7 +83,53 @@
 
     </dl>
 </div>
+
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index")  |
 </p>
+
+
+
+
+<h4> Furniture Parts List </h4>
+<p>@Html.ActionLink("Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName}, null)</p>
+
+
+<hr />
+
+<table>
+    <thead> Parts List </thead>
+    <tr>
+        <th>Part Name</th>
+        <th>Width</th>
+        <th>Length</th>
+        <th>Board Thickness</th>
+        <th>Part Count</th>
+        <th>Board Foot</th>
+        <th> </th>
+    </tr>
+
+    @{
+        var getParts = ViewBag.Parts;//From Controller Furnitures/Details
+        foreach (var item in getParts)
+        {
+            int id = item.FurniturePartId;
+            if (item.FurnitureIndex == Model.FurnitureID)
+            {
+                <tr>
+                    <td>@item.PartName</td>
+                    <td>@item.Width</td>
+                    <td>@item.Length </td>
+                    <td>@item.BoardThickness</td>
+                    <td>@item.PartCount</td>
+                    <td>@item.partBoardFoot</td>
+                    <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
+                </tr>
+            }
+        }
+    }
+</table>
+
+
+<h1>Total Board Foot = @TotalBoardFoot</h1>

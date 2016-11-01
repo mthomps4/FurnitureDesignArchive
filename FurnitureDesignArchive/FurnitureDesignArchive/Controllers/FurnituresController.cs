@@ -12,7 +12,7 @@ namespace FurnitureDesignArchive
 {
     public class FurnituresController : Controller
     {
-        private FurnitureContext db = new FurnitureContext();
+        private FurnitureDBContext db = new FurnitureDBContext();
 
         // GET: Furnitures
         public ActionResult Index()
@@ -32,6 +32,7 @@ namespace FurnitureDesignArchive
             {
                 return HttpNotFound();
             }
+            ViewBag.Parts = db.FurnitureParts.ToList();
             return View(furniture);
         }
 

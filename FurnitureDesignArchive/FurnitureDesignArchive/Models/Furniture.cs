@@ -52,11 +52,5 @@ namespace FurnitureDesignArchive.Models
 
     }
 
-    public class FurnitureContext : DbContext
-    {
-        public DbSet<Furniture> FurniturePieces { get; set; }
-        public DbSet<FurniturePart> FurnitureParts { get; set; }
-    }
-
 
 }

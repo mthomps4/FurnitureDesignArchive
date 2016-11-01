@@ -150,6 +150,7 @@
     <Content Include="scripts\jquery.validate.unobtrusive.js" />
     <Content Include="scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="TaskList\TODO.txt" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -159,16 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201610172134215_InitialCreate.cs" />
-    <Compile Include="Migrations\201610172134215_InitialCreate.Designer.cs">
-      <DependentUpon>201610172134215_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201610172325373_addedfurnparts.cs" />
-    <Compile Include="Migrations\201610172325373_addedfurnparts.Designer.cs">
-      <DependentUpon>201610172325373_addedfurnparts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Furniture.cs" />
+    <Compile Include="Models\FurnitureDBContext.cs" />
+    <Compile Include="Models\FurnitureDBInitializer.cs" />
     <Compile Include="Models\FurniturePart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -201,14 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610172134215_InitialCreate.resx">
-      <DependentUpon>201610172134215_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201610172325373_addedfurnparts.resx">
-      <DependentUpon>201610172325373_addedfurnparts.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
