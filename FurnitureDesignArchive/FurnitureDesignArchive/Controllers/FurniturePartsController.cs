@@ -71,7 +71,7 @@ namespace FurnitureDesignArchive
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
                         furniturePart.partBoardFoot = 0;
                         double BoardFoot = furniturePart.PartCount*((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness)/144);
-                        BoardFoot = Math.Round(BoardFoot, 3);
+                        BoardFoot = Math.Round(BoardFoot, 4);
                         furniturePart.partBoardFoot = BoardFoot;
                         db.FurnitureParts.Add(furniturePart);
                         db.SaveChanges();
@@ -86,7 +86,7 @@ namespace FurnitureDesignArchive
                         furniturePart.FurniturePieceName = furniture.FurnitureName;
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
                         double BoardFoot = furniturePart.PartCount * ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
-                        BoardFoot = Math.Round(BoardFoot, 3);
+                        BoardFoot = Math.Round(BoardFoot, 4);
                         furniturePart.partBoardFoot = BoardFoot;
                         db.FurnitureParts.Add(furniturePart);
                         db.SaveChanges();
@@ -135,7 +135,7 @@ namespace FurnitureDesignArchive
 
                 furniturePart.partBoardFoot = 0;
                 double BoardFoot = furniturePart.PartCount * ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
-                BoardFoot = Math.Round(BoardFoot, 3);
+                BoardFoot = Math.Round(BoardFoot, 4);
                 furniturePart.partBoardFoot = BoardFoot;
 
 

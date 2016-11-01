@@ -5,93 +5,59 @@
     ViewBag.Title = "Details";
 
 
-        double TotalBoardFoot = 0;
-        var getPartsListForBoardFoot = ViewBag.Parts;//From Controller Furnitures/Details
-        foreach (var item in getPartsListForBoardFoot)
+    double TotalBoardFoot = 0;
+    var getPartsListForBoardFoot = ViewBag.Parts;//From Controller Furnitures/Details
+    foreach (var item in getPartsListForBoardFoot)
+    {
+        if (item.FurnitureIndex == Model.FurnitureID)
         {
-            if (item.FurnitureIndex == Model.FurnitureID)
-            {
-                TotalBoardFoot += @item.partBoardFoot;
-            }
+            TotalBoardFoot += @item.partBoardFoot;
         }
+    }
 
 
 }
 
+<div class="furnitureDetailsContainer">
+    <div class="furnitureImageBlock">
+        <img src="@Html.DisplayFor(model => model.FurnitureImg)" alt="Shaker Side Table Image" />
+    </div>
 
-<h2>Details</h2>
+    <div class="furnitureDetails">
+        <div>
+            <h2>@Html.DisplayFor(model => model.FurnitureName) Details</h2>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+        <hr />
+        <div>
+            <dl class="dl-horizontal">
+                <dt>@Html.DisplayNameFor(model => model.buildLevel)</dt>
+                <dd>@Html.DisplayFor(model => model.buildLevel)</dd>
 
-<div>
-    <h4>Furniture</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FurnitureName)
-        </dt>
+                <dt>@Html.DisplayNameFor(model => model.furnitureType)</dt>
+                <dd>@Html.DisplayFor(model => model.furnitureType)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FurnitureName)
-        </dd>
+                <dt>@Html.DisplayNameFor(model => model.AdditionalNotes)</dt>
+                <dd>@Html.DisplayFor(model => model.AdditionalNotes)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FurnitureImg)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FurnitureImg)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.buildLevel)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.buildLevel)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.furnitureType)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.furnitureType)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AdditionalNotes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AdditionalNotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompletedBefore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompletedBefore)
-        </dd>
-
-    </dl>
+                <dt>@Html.DisplayNameFor(model => model.CompletedBefore)</dt>
+                <dd>@Html.DisplayFor(model => model.CompletedBefore)</dd>
+            </dl>
+        </div>
+    </div>
 </div>
-
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
-    @Html.ActionLink("Back to List", "Index")  |
-</p>
-
-
-
-
-<h4> Furniture Parts List </h4>
-<p>@Html.ActionLink("Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName}, null)</p>
 
 
 <hr />
+@* TODO: BLOCK OUT HTML FOR CSS LAYOUT *@
+<h4> Furniture Parts List </h4>
+<p>@Html.ActionLink("Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName }, null)</p>
+
 
 <table>
-    <thead> Parts List </thead>
     <tr>
         <th>Part Name</th>
         <th>Width</th>
@@ -104,24 +70,35 @@
 
     @{
         var getParts = ViewBag.Parts;//From Controller Furnitures/Details
-        foreach (var item in getParts)
+        foreach (var part in getParts)
         {
-            int id = item.FurniturePartId;
-            if (item.FurnitureIndex == Model.FurnitureID)
+            int id = part.FurniturePartId;
+            if (part.FurnitureIndex == Model.FurnitureID)
             {
                 <tr>
-                    <td>@item.PartName</td>
-                    <td>@item.Width</td>
-                    <td>@item.Length </td>
-                    <td>@item.BoardThickness</td>
-                    <td>@item.PartCount</td>
-                    <td>@item.partBoardFoot</td>
+                    <td>@part.PartName</td>
+                    <td>@part.Width</td>
+                    <td>@part.Length </td>
+                    <td>@part.BoardThickness</td>
+                    <td>@part.PartCount</td>
+                    <td>@part.partBoardFoot</td>
                     <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
                 </tr>
             }
         }
     }
 </table>
+<h4>Total Board Foot = @TotalBoardFoot</h4>
 
 
-<h1>Total Board Foot = @TotalBoardFoot</h1>
+
+@{ 
+    <h4>Part Notes</h4>
+    foreach (var part in getParts)
+    {
+        if (part.FurnitureIndex == Model.FurnitureID)
+        {
+            <p><b>@part.PartName -- Notes: </b> @part.PartNotes</p>
+        }
+    }
+}
