@@ -1,0 +1,51 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700');
+/*font-family: 'Roboto', sans-serif;*/
+
+a, ul, ol {
+    text-decoration:none;
+}
+
+/*Navigation*/
+header{
+   background-color:#eee;
+   height:58px;
+   display:flex; 
+   flex-direction:row;
+   align-items:center;
+}
+
+.nav-home {
+    font-family: 'Roboto', sans-serif;
+    font-size:2em; 
+    color:#777;
+    font-weight:300;
+    margin-left:2em;
+    margin-right:auto;
+}
+/*Furniture Display*/
+.furnitureDetailsContainer {
+    display:flex;
+    flex-direction:row;
+    width:100%;
+}
+
+.furnitureImageBlock{
+    margin:50px;
+    width:40%;
+}
+
+.furnitureDetails{
+    width:50%;
+}
+
+.furnitureTitleFlex{
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.furnitureTitleFlex button{
+    height:30px;
+}

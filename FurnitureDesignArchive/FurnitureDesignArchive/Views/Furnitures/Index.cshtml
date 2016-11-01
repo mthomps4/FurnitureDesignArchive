@@ -4,68 +4,25 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FurnitureName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FurnitureImg)
-        </th>
-        <th>
-             @Html.DisplayNameFor(model => model.furnitureType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.buildLevel)
-        </th>
-
-        @*<th>
-            @Html.DisplayNameFor(model => model.BoardFootEst)
-        </th>*@
-        @*<th>
-            @Html.DisplayNameFor(model => model.AdditionalNotes)
-        </th>*@
-        <th>
-            @Html.DisplayNameFor(model => model.CompletedBefore)
-        </th>
-        <th></th>
-    </tr>
+<button>
+    @Html.ActionLink("+ New", "Create")
+</button>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FurnitureName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FurnitureImg)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.furnitureType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.buildLevel)
-        </td>
+    <div class="FurniturePieceBox">
+        <img class="FurniturePieceImage" src="@Html.DisplayFor(modelItem => item.FurnitureImg)" alt="Furniture Piece Image" />
+        <div>
+            <h3>@Html.DisplayFor(modelItem => item.FurnitureName)</h3>
 
-        @*<td>
-            @Html.DisplayFor(modelItem => item.BoardFootEst)
-        </td>*@
-        @*<td>
-            @Html.DisplayFor(modelItem => item.AdditionalNotes)
-        </td>*@
-        <td>
-            @Html.DisplayFor(modelItem => item.CompletedBefore)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FurnitureID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FurnitureID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FurnitureID })
-        </td>
-    </tr>
+            <p><b>Build Level:</b>@Html.DisplayFor(modelItem => item.buildLevel)</p>
+            
+            <p>@Html.DisplayFor(modelItem => item.CompletedBefore)</p>
+            
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FurnitureID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FurnitureID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FurnitureID })
+            </p>
+        </div>
+    </div>
 }
-
-</table>
