@@ -27,7 +27,7 @@ namespace FurnitureDesignArchive.Models
                 FurnitureAddition.ForEach(f => context.FurniturePieces.Add(f));
                 context.SaveChanges();
 
-                var FurniturePartAddition = new List<FurniturePart>
+            var FurniturePartAddition = new List<FurniturePart>
                 {
                     new Models.FurniturePart {
                         FurnitureIndex = 1,
@@ -36,7 +36,8 @@ namespace FurnitureDesignArchive.Models
                         BoardThickness = 2,
                         Length = 30,
                         Width = 30,
-                        PartNotes = "4 legs squared. Mortise and Tennoned into Sides. Front Piece has top and bottom mortised in with center piece acting as drawer front."
+                        PartNotes = "4 legs squared. Mortise and Tennoned into Sides. Front Piece has top and bottom mortised in with center piece acting as drawer front.",
+                        partBoardFoot = 12.5
                     }//Furniture Part Addition , new FurniturePart
                 };
 

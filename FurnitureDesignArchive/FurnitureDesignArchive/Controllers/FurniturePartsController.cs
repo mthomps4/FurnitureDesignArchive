@@ -70,7 +70,7 @@ namespace FurnitureDesignArchive
                         furniturePart.FurniturePieceName = furniture.FurnitureName; //Set Name and ID for Parts DB 
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
                         furniturePart.partBoardFoot = 0;
-                        double BoardFoot = ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness)/144);
+                        double BoardFoot = furniturePart.PartCount*((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness)/144);
                         BoardFoot = Math.Round(BoardFoot, 3);
                         furniturePart.partBoardFoot = BoardFoot;
                         db.FurnitureParts.Add(furniturePart);
@@ -85,6 +85,9 @@ namespace FurnitureDesignArchive
                     {
                         furniturePart.FurniturePieceName = furniture.FurnitureName;
                         furniturePart.FurnitureIndex = furniture.FurnitureID;
+                        double BoardFoot = furniturePart.PartCount * ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
+                        BoardFoot = Math.Round(BoardFoot, 3);
+                        furniturePart.partBoardFoot = BoardFoot;
                         db.FurnitureParts.Add(furniturePart);
                         db.SaveChanges();
                         var id = furniturePart.FurnitureIndex; //FurnitureID = FurnitureIndex 
@@ -131,7 +134,7 @@ namespace FurnitureDesignArchive
                 db.Entry(furniturePart).State = EntityState.Modified;
 
                 furniturePart.partBoardFoot = 0;
-                double BoardFoot = ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
+                double BoardFoot = furniturePart.PartCount * ((furniturePart.Width * furniturePart.Length * furniturePart.BoardThickness) / 144);
                 BoardFoot = Math.Round(BoardFoot, 3);
                 furniturePart.partBoardFoot = BoardFoot;
 
