@@ -11,18 +11,19 @@
             <header>
                 @Html.ActionLink("3Wire Archive", "Index", "Furnitures", new { area = "" }, new { @class = "nav-home" })
                 <nav id="navbar">
-                    <ul class="nav-list"></ul>
+                    <ul class="nav-list">
+                        <li>@Html.ActionLink("+ New Piece", "Create")</li>
+                    </ul>
                 </nav>
             </header>
 
-        <div class="container">
-            @RenderBody()
-        
-            <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 3WireBuild - Matthew Thompson</p>
-        </footer>
+    <div class="container">
+        @RenderBody()
     </div>
 
+<hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - 3WireBuild - Matthew Thompson</p>
+    </footer>
 </body>
 </html>

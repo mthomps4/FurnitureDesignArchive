@@ -3,49 +3,83 @@
 
 a, ul, ol {
     text-decoration:none;
+    list-style:none;
 }
 
 /*Navigation*/
 header{
    background-color:#eee;
-   height:58px;
+   height:72px;
    display:flex; 
    flex-direction:row;
    align-items:center;
+   border-bottom: solid 2px #333;
 }
 
 .nav-home {
     font-family: 'Roboto', sans-serif;
-    font-size:2em; 
+    font-size:1.5em; 
     color:#777;
     font-weight:300;
-    margin-left:2em;
+    margin-left:1em;
     margin-right:auto;
 }
+.nav-list {
+    margin-right:1.5em;
+    color:#777;
+}
+
+.nav-list a, .nav-list a:visited {
+    color:#777;
+}
+
+.nav-home:hover, .nav-list a:hover{
+    color:#444;
+}
+
+/*Main Layout*/
+.container{
+    width:100%;
+}
+
 /*Furniture Display*/
-.furnitureDetailsContainer {
-    display:flex;
-    flex-direction:row;
+.FurniturePieceBox{
+    width:80%;
+    margin:0 auto;
+    margin-top:20px;
+    margin-bottom:20px;
+    border: solid 1px #444;
+    border-radius: 15px;
+}
+
+.FurniturePieceImage{
     width:100%;
+    border-bottom:solid 2px #444;
+    border-top-left-radius: 15px;
+    border-top-right-radius:15px;
 }
 
-.furnitureImageBlock{
-    margin:50px;
-    width:40%;
-}
-
-.furnitureDetails{
-    width:50%;
-}
-
-.furnitureTitleFlex{
-    display:flex;
-    flex-direction:row;
+.FurniturePieceTitle{
     width:100%;
-    justify-content:space-between;
-    align-items:center;
+    text-align:center;
+    color:#222;
+    margin-top:.5em;
+    margin-bottom:.5em;
 }
 
-.furnitureTitleFlex button{
-    height:30px;
+.buildLevel{
+    margin-left:1em;
+}
+
+.builtBefore{
+    margin-left:1em;
+}
+
+.detailButtons{
+    text-align:center;
+    color:#ccc;
+}
+
+.detailButtons a:hover{
+    color:blue;
 }

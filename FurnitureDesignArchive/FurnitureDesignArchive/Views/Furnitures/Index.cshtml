@@ -4,25 +4,20 @@
     ViewBag.Title = "Index";
 }
 
-<button>
-    @Html.ActionLink("+ New", "Create")
-</button>
-
 @foreach (var item in Model) {
     <div class="FurniturePieceBox">
         <img class="FurniturePieceImage" src="@Html.DisplayFor(modelItem => item.FurnitureImg)" alt="Furniture Piece Image" />
-        <div>
-            <h3>@Html.DisplayFor(modelItem => item.FurnitureName)</h3>
+            <h3 class="FurniturePieceTitle">@Html.DisplayFor(modelItem => item.FurnitureName)</h3>
 
-            <p><b>Build Level:</b>@Html.DisplayFor(modelItem => item.buildLevel)</p>
+            <p class="buildLevel"><b>Build Level:</b>@Html.DisplayFor(modelItem => item.buildLevel)</p>
             
-            <p>@Html.DisplayFor(modelItem => item.CompletedBefore)</p>
+            <p class="builtBefore"><b>Built before: </b>@if (item.CompletedBefore == true)
+            { <text>Yes</text> }else{ <text>No</text> } </p>
             
-            <p>
+            <p class="detailButtons">
                 @Html.ActionLink("Edit", "Edit", new { id = item.FurnitureID }) |
                 @Html.ActionLink("Details", "Details", new { id = item.FurnitureID }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.FurnitureID })
             </p>
-        </div>
     </div>
 }
