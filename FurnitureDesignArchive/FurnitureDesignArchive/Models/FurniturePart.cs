@@ -12,6 +12,5 @@
         public double BoardThickness { get; set; }
         public double partBoardFoot { get; set; }
         public string PartNotes { get; set; }
-        public string PartImgUrl { get; set; }
     }
 }

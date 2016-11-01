@@ -41,9 +41,6 @@ namespace FurnitureDesignArchive.Models
         [Display(Name = "Furniture Type")]
         public FurnitureType furnitureType { get; set; }
 
-        [Display(Name = "Board Foot Estimate")]
-        public double BoardFootEst { get; set; } //12.5 BF
-
         [Display(Name = "Additional Notes")]
         public string AdditionalNotes { get; set; }
 

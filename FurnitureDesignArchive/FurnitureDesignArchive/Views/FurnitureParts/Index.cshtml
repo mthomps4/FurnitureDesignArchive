@@ -30,15 +30,12 @@
             @Html.DisplayNameFor(model => model.BoardThickness)
         </th>
         <th>
-            @* TODO: Make Part Board Foot Calculations OFF of User Entry Above *@
             @Html.DisplayNameFor(model => model.partBoardFoot)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PartNotes)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PartImgUrl)
-        </th>
+
         <th></th>
     </tr>
 
@@ -63,15 +60,12 @@
             @Html.DisplayFor(modelItem => item.BoardThickness)
         </td>
         <td>
-            @* TODO: Make Part Board Foot Calculations OFF of User Entry Above *@
             @Html.DisplayFor(modelItem => item.partBoardFoot)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PartNotes)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PartImgUrl)
-        </td>
+
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.FurniturePartId }) |
             @Html.ActionLink("Details", "Details", new { id=item.FurniturePartId }) |
