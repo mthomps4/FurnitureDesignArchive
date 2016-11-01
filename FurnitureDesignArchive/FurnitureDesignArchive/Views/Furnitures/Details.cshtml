@@ -4,7 +4,6 @@
 @{
     ViewBag.Title = "Details";
 
-
     double TotalBoardFoot = 0;
     var getPartsListForBoardFoot = ViewBag.Parts;//From Controller Furnitures/Details
     foreach (var item in getPartsListForBoardFoot)
@@ -14,7 +13,6 @@
             TotalBoardFoot += @item.partBoardFoot;
         }
     }
-
 
 }
 
@@ -26,12 +24,10 @@
     <div class="furnitureDetails">
         <div>
             <h2>@Html.DisplayFor(model => model.FurnitureName) Details</h2>
-            <p>
-                @Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID }) |
-                @Html.ActionLink("Back to List", "Index")
-            </p>
+                <button>@Html.ActionLink("Edit", "Edit", new { id = Model.FurnitureID })</button>
+                <button>@Html.ActionLink("Back to List", "Index")</button>
         </div>
-        <hr />
+              <hr />
         <div>
             <dl class="dl-horizontal">
                 <dt>@Html.DisplayNameFor(model => model.buildLevel)</dt>
@@ -53,9 +49,11 @@
 
 <hr />
 @* TODO: BLOCK OUT HTML FOR CSS LAYOUT *@
-<h4> Furniture Parts List </h4>
-<p>@Html.ActionLink("Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName }, null)</p>
 
+<div>
+    <h4> Furniture Parts List </h4>
+    <button>@Html.ActionLink("+ Add Part", "Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName }, null)</button>
+</div>
 
 <table>
     <tr>
@@ -77,18 +75,29 @@
             {
                 <tr>
                     <td>@part.PartName</td>
-                    <td>@part.Width</td>
-                    <td>@part.Length </td>
-                    <td>@part.BoardThickness</td>
+                    <td>@part.Width"</td>
+                    <td>@part.Length"</td>
+                    <td>@part.BoardThickness"</td>
                     <td>@part.PartCount</td>
-                    <td>@part.partBoardFoot</td>
+                    <td>@part.partBoardFoot'</td>
                     <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
                 </tr>
             }
         }
     }
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>Total Board Foot: </b></td>
+        <td><b><i>@TotalBoardFoot'</i></b></td>
+        <td></td>
+    </tr>
+
 </table>
-<h4>Total Board Foot = @TotalBoardFoot</h4>
+
 
 
 
@@ -98,7 +107,7 @@
     {
         if (part.FurnitureIndex == Model.FurnitureID)
         {
-            <p><b>@part.PartName -- Notes: </b> @part.PartNotes</p>
+            <p><b>@part.PartName:</b> @part.PartNotes</p>
         }
     }
 }
