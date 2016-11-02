@@ -6,18 +6,13 @@
 
 @foreach (var item in Model) {
     <div class="FurniturePieceBox">
-        <img class="FurniturePieceImage" src="@Html.DisplayFor(modelItem => item.FurnitureImg)" alt="Furniture Piece Image" />
-            <h3 class="FurniturePieceTitle">@Html.DisplayFor(modelItem => item.FurnitureName)</h3>
-
-            <p class="buildLevel"><b>Build Level:</b>@Html.DisplayFor(modelItem => item.buildLevel)</p>
-            
-            <p class="builtBefore"><b>Built before: </b>@if (item.CompletedBefore == true)
-            { <text>Yes</text> }else{ <text>No</text> } </p>
-            
-            <p class="detailButtons">
-                @Html.ActionLink("Edit", "Edit", new { id = item.FurnitureID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.FurnitureID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.FurnitureID })
-            </p>
+        <a class="FurniturePieceButton" href="@Url.Action("Details", "Furnitures", new { id = item.FurnitureID })">
+            <img class="FurniturePieceImage" src="@Html.DisplayFor(modelItem => item.FurnitureImg)" alt="Furniture Piece Image" />
+            <div class="FurniturePieceDetailWrapper">
+                <h3 class="FurniturePieceTitle">@Html.DisplayFor(modelItem => item.FurnitureName)</h3>
+            </div>
+        </a>
     </div>
 }
+
+

@@ -17,9 +17,7 @@
 }
 
 <div class="furnitureDetailsContainer">
-    <div class="furnitureImageBlock">
-        <img src="@Html.DisplayFor(model => model.FurnitureImg)" alt="Shaker Side Table Image" />
-    </div>
+    <img class="furnitureImageBlock" src="@Html.DisplayFor(model => model.FurnitureImg)" alt="Shaker Side Table Image" />
 
     <div class="furnitureDetails">
         <div class="furnitureTitleFlex">
@@ -110,3 +108,21 @@
         }
     }
 }
+
+
+
+
+@*<p class="buildLevel"><b>Build Level:</b>@Html.DisplayFor(modelItem => item.buildLevel)</p>
+
+    <p class="builtBefore">
+        <b>Built before: </b>@if (item.CompletedBefore == true)
+        { <text>Yes</text> }
+        else
+        { <text>No</text> }
+    </p>*@
+
+<p class="detailButtons">
+    @*@Html.ActionLink("Edit", "Edit", new { id = item.FurnitureID }) |*@
+    @*@Html.ActionLink("Details", "Details", new { id = item.FurnitureID })*@
+    @*@Html.ActionLink("Delete", "Delete", new { id = item.FurnitureID })*@
+</p>

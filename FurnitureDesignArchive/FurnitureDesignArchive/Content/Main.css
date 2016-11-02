@@ -8,33 +8,32 @@ a, ul, ol {
 
 /*Navigation*/
 header{
-   background-color:#eee;
+   background-color:#444;
    height:72px;
    display:flex; 
    flex-direction:row;
    align-items:center;
-   border-bottom: solid 2px #333;
 }
 
 .nav-home {
     font-family: 'Roboto', sans-serif;
-    font-size:1.5em; 
-    color:#777;
+    font-size:1.3em; 
+    color:#ccc;
     font-weight:300;
     margin-left:1em;
     margin-right:auto;
 }
 .nav-list {
     margin-right:1.5em;
-    color:#777;
+    color:#ccc;
 }
 
 .nav-list a, .nav-list a:visited {
-    color:#777;
+    color:#ccc;
 }
 
 .nav-home:hover, .nav-list a:hover{
-    color:#444;
+    color:#fff;
 }
 
 /*Main Layout*/
@@ -48,13 +47,21 @@ header{
     margin:0 auto;
     margin-top:20px;
     margin-bottom:20px;
-    border: solid 1px #444;
     border-radius: 15px;
+    background-color:#01579B;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+}
+
+.FurniturePieceBox a{
+    margin:0;
+    padding:0;
 }
 
 .FurniturePieceImage{
     width:100%;
-    border-bottom:solid 2px #444;
+    border-bottom:solid 2px #ccc;
     border-top-left-radius: 15px;
     border-top-right-radius:15px;
 }
@@ -62,24 +69,26 @@ header{
 .FurniturePieceTitle{
     width:100%;
     text-align:center;
-    color:#222;
+    color:#eee;
+    font-family: 'Roboto', sans-serif;
+    font-weight:100;
+    font-size:1.25em;
     margin-top:.5em;
     margin-bottom:.5em;
 }
 
-.buildLevel{
-    margin-left:1em;
+.FurniturePieceDetailWrapper{
+    padding: 15px 0px;
 }
 
-.builtBefore{
-    margin-left:1em;
+/*Details Page*/
+.furnitureDetailsContainer{
+    width:90%;
+    margin:0 auto;
 }
 
-.detailButtons{
-    text-align:center;
-    color:#ccc;
+.furnitureImageBlock{
+    width:100%;
+    margin:0 auto;
 }
 
-.detailButtons a:hover{
-    color:blue;
-}
