@@ -102,6 +102,10 @@ namespace FurnitureDesignArchive
             {
                 return HttpNotFound();
             }
+
+            var deletePartsList = db.FurnitureParts.Where(part => part.FurnitureIndex == id);
+
+
             return View(furniture);
         }
 
@@ -112,6 +116,14 @@ namespace FurnitureDesignArchive
         {
             Furniture furniture = db.FurniturePieces.Find(id);
             db.FurniturePieces.Remove(furniture);
+            db.SaveChanges();
+
+           var PartsList = from x in db.FurnitureParts where x.FurnitureIndex == id select x;
+
+            foreach (var part in PartsList)
+            {
+                db.FurnitureParts.Remove(part);
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }

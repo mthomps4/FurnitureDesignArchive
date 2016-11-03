@@ -321,10 +321,9 @@ dl dd {
 }
 
 /*Parts Create*/
-.addAnother{
 
-}
-
-.FinishedParts{
-
+.partSaveButtonContainer{
+    display:flex;
+    flex-direction:row;
+    justify-content:space-around;
 }

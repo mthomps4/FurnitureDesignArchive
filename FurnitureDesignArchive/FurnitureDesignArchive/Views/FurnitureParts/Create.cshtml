@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="editWrap">
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "backTo" })
+        @Html.ActionLink("Back to List", "Index", "Furnitures", null, new { @class = "backTo" })
 
 
         <h2>Create Parts</h2>
@@ -78,9 +78,9 @@
                 </div>
 
                 <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Add Another Part" name="submit" class="addAnother" />
-                        <input type="submit" value="Finished" name="submit" class="FinishedParts" />
+                    <div class="partSaveButtonContainer">
+                        <input type="submit" value="Add Another Part" name="submit" class="save addAnother" />
+                        <input type="submit" value="Finished" name="submit" class="save FinishedParts" />
                     </div>
                 </div>
             </div>
