@@ -4,69 +4,57 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<div class="container">
+    <div class="editWrap">
+        <h2>Delete @Html.DisplayFor(model => model.FurnitureName)</h2>
+        <h3 class="AreYouSure">Are you sure you want to delete this piece AND all of it's part components?</h3>
+        <div>
+            <hr />
+            <img class="deleteImage" src="@Model.FurnitureImg" />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.buildLevel)
+                </dt>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Furniture</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FurnitureName)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.buildLevel)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FurnitureName)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.furnitureType)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.FurnitureImg)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.furnitureType)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.FurnitureImg)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.AdditionalNotes)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.buildLevel)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.AdditionalNotes)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.buildLevel)
-        </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.CompletedBefore)
+                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.furnitureType)
-        </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.CompletedBefore)
+                </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.furnitureType)
-        </dd>
+            </dl>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AdditionalNotes)
-        </dt>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-        <dd>
-            @Html.DisplayFor(model => model.AdditionalNotes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CompletedBefore)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CompletedBefore)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                <div class="form-actions no-color">
+                    <input type="submit" value="Yes, Delete" class="deleteConf" /> |
+                    @Html.ActionLink("No, Back to List", "Index", null, new { @class = "deleteBackTo" })
+                </div>
+            }
         </div>
-    }
+    </div>
 </div>

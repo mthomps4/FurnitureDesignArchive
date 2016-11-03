@@ -20,7 +20,7 @@
     <div class="furnitureDetails">
         <div class="furnitureTitleFlex">
             <h2 class="furnitureTitle">@Html.DisplayFor(model => model.FurnitureName) Details</h2>
-            <a class="furnitureEditButton" href="@Url.Action("Edit", "Furnitures", new { id = Model.FurnitureID })">Edit</a>
+            <a class="furnitureEditButton" href="@Url.Action("Edit", "Furnitures", new { id = Model.FurnitureID })">- Edit</a>
         </div>
             <hr />
         <div>
@@ -81,14 +81,13 @@
                     }
                 }
             }
-            </tr>
         </table>
-        <p class="totalFoot"><b><i>Total Board Foot: @TotalBoardFoot'</i></b></p>
     </div>
+    <p class="totalFoot"><b><i>Total Board Foot: @TotalBoardFoot'</i></b></p>
         
     <hr />
 
-    <h4 class="partNotesTitle">Part Notes</h4>
+    <h4 class="partNotesTitle">Additional Part Notes</h4>
     <div class="partNotes">
         @{
             foreach (var part in getParts)
@@ -101,11 +100,8 @@
         }
     </div>
 
+</div>
 
-    <p class="detailButtons">
-        @*@Html.ActionLink("Edit", "Edit", new { id = item.FurnitureID }) |*@
-        @*@Html.ActionLink("Details", "Details", new { id = item.FurnitureID })*@
-        @*@Html.ActionLink("Delete", "Delete", new { id = item.FurnitureID })*@
-    </p>
-
+<div class="deleteContainer">
+   <a class="delete" href="@Url.Action("Delete", "Furnitures", new { id = Model.FurnitureID })">Remove Furniture Piece</a>
 </div>
