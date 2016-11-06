@@ -53,9 +53,9 @@
         <table>
             <tr>
                 <th>Part Name</th>
-                <th>Width</th>
-                <th>Length</th>
-                <th>Thickness</th>
+                <th class="partsTableMobile">Width</th>
+                <th class="partsTableMobile">Length</th>
+                <th class="partsTableMobile">Thickness</th>
                 <th>Count</th>
                 <th>Board Foot</th>
                 <th> </th>
@@ -69,12 +69,13 @@
                     {
                         <tr>
                             <td>@part.PartName</td>
-                            <td>@part.Width"</td>
-                            <td>@part.Length"</td>
-                            <td>@part.BoardThickness"</td>
+                            <td class="partsTableMobile">@part.Width"</td>
+                            <td class="partsTableMobile">@part.Length"</td>
+                            <td class="partsTableMobile">@part.BoardThickness"</td>
                             <td>@part.PartCount</td>
                             <td>@part.partBoardFoot'</td>
                             <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
+                            <td>@Html.ActionLink("Delete", "Delete", "FurnitureParts", new { id }, null)</td>
                         </tr>
                     }
                 }

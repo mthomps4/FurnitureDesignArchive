@@ -180,8 +180,6 @@ dl dd {
 }
 
 .partsTable td, .partsTable th{ 
-    font-size:.5em;
-    padding:5px;
     border-bottom:1px solid #ccc;
     opacity:.83;
 }
@@ -194,6 +192,10 @@ dl dd {
 .partsTable a:hover{
     color:blue;
     opacity:1;
+}
+
+.partsTableMobile {
+    display:none;
 }
 
 .totalFoot{

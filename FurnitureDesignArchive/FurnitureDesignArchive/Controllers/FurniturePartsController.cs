@@ -169,7 +169,7 @@ namespace FurnitureDesignArchive
             FurniturePart furniturePart = db.FurnitureParts.Find(id);
             db.FurnitureParts.Remove(furniturePart);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Furnitures");
         }
 
         protected override void Dispose(bool disposing)

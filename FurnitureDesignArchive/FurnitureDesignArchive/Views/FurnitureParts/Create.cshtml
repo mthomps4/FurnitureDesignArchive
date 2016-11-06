@@ -6,8 +6,7 @@
 
 <div class="container">
     <div class="editWrap">
-        @Html.ActionLink("Back to List", "Index", "Furnitures", null, new { @class = "backTo" })
-
+        @Html.ActionLink("Back to List", "Details", "Furnitures", new { id = Model.FurnitureIndex }, new { @class = "backTo" })
 
         <h2>Create Parts</h2>
         <h4>Furniture Part For @Html.ValueFor(model => model.FurniturePieceName)</h4>

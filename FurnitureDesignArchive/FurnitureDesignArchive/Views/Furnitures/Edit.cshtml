@@ -6,7 +6,9 @@
 
 <div class="container">
     <div class="editWrap">
-        @Html.ActionLink("Back to List", "Index", null, new { @class = "backTo" })
+        @Html.ActionLink("Back to List", "Details", "Furnitures", new { id = Model.FurnitureID }, new { @class = "backTo" })
+
+
 
 
         <h2>Edits For: </h2>
