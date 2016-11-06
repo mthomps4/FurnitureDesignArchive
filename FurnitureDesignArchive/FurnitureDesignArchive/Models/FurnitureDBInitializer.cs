@@ -21,7 +21,52 @@ namespace FurnitureDesignArchive.Models
                         buildLevel=Furniture.IntensityLevel.Intermediate,
                         AdditionalNotes="~30\" high -- Multiple drawer types -- Customize demensions to fit space needed -- Bottom shelf can be added.",
                         CompletedBefore=true
-                    }//Furniture Addition , new Models.Furniture{}
+                    },//Furniture Addition , new Models.Furniture{}
+                    new Models.Furniture{
+                        FurnitureID=2,
+                        FurnitureName="Wooden Jack Plane",
+                        furnitureType= Furniture.FurnitureType.Tools,
+                        FurnitureImg="https://c1.staticflickr.com/6/5549/30686452192_125dd5d384_o.jpg",
+                        buildLevel =Furniture.IntensityLevel.Beginner,
+                        AdditionalNotes="Length of plane can be adjusted for use.",
+                        CompletedBefore=true
+                    },
+                    new Models.Furniture{
+                        FurnitureID=3,
+                        FurnitureName="Oak Table",
+                        furnitureType= Furniture.FurnitureType.Tables,
+                        FurnitureImg="https://c3.staticflickr.com/6/5344/30680944106_86c07f6894_o.jpg",
+                        buildLevel =Furniture.IntensityLevel.Intermediate,
+                        AdditionalNotes="Hardware can be used for breakdown instead of solid joints.",
+                        CompletedBefore=false
+                    },
+                    new Models.Furniture{
+                        FurnitureID=4,
+                        FurnitureName="Dutch Chest",
+                        furnitureType= Furniture.FurnitureType.Containers,
+                        FurnitureImg="https://c8.staticflickr.com/6/5452/30083178023_4cb4585dc7_o.jpg",
+                        buildLevel =Furniture.IntensityLevel.Intermediate,
+                        AdditionalNotes="Drawboard and hardware for stability.",
+                        CompletedBefore=false
+                    },
+                    new Models.Furniture{
+                        FurnitureID=5,
+                        FurnitureName="Wooden Book Case",
+                        furnitureType= Furniture.FurnitureType.Containers,
+                        FurnitureImg="https://c3.staticflickr.com/6/5328/30522943570_816c03bd8a_o.jpg",
+                        buildLevel =Furniture.IntensityLevel.Beginner,
+                        AdditionalNotes="Solid inlayed shelves added stability.",
+                        CompletedBefore=false
+                    },
+                    new Models.Furniture{
+                        FurnitureID=6,
+                        FurnitureName="Wooden Stool",
+                        furnitureType= Furniture.FurnitureType.Seating,
+                        FurnitureImg="https://c6.staticflickr.com/6/5695/30736088781_fa99f7d9d5_o.jpg",
+                        buildLevel =Furniture.IntensityLevel.Beginner,
+                        AdditionalNotes="Drawboarded for stability, full mortise and tenon.",
+                        CompletedBefore=false
+                    },
                 };
 
                 FurnitureAddition.ForEach(f => context.FurniturePieces.Add(f));
