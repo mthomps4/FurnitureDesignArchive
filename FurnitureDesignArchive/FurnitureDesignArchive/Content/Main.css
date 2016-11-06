@@ -329,3 +329,60 @@ dl dd {
     flex-direction:row;
     justify-content:space-around;
 }
+
+/*Media Query*/
+@media(min-width:390px){
+    .mainContainer{
+        margin:30px;
+    }
+}
+
+@media(min-width:425px){
+    .FurniturePieceBox{
+       width:60%;
+       margin:60px auto;
+    }
+}
+
+@media(min-width:560px) {
+
+    .mainContainer{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .FurniturePieceBox{
+        width:45%;
+        margin:30px auto;
+    }
+}
+
+@media(min-width:725px){
+    .FurniturePieceBox{
+        width:28%;
+    }
+}
+
+@media(min-width:930px){
+    .FurniturePieceBox{
+        margin:30px auto;
+    }
+}
+
+@media(min-width:1025px){
+    .FurniturePieceBox{
+        width:20%;
+        margin:30px 50px;
+    }
+
+    .mainContainer{
+        margin:0 auto;
+    }
+}
+
+@media(min-width:1150px) {
+    .FurniturePieceBox {
+        width:18%;
+    }
+}
