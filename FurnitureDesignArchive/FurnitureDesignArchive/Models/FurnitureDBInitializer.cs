@@ -360,6 +360,62 @@ namespace FurnitureDesignArchive.Models
                         PartNotes = "",
                         partBoardFoot = 7.5
                     },
+
+                    new Models.FurniturePart {
+                        FurnitureIndex = 5,
+                        PartName = "",
+                        PartCount = 4,
+                        BoardThickness = 3,
+                        Length = 30,
+                        Width = 3,
+                        PartNotes = "",
+                        partBoardFoot = 7.5
+                    },
+// Piece 6 - Stool 
+                    new Models.FurniturePart {
+                        FurnitureIndex = 6,
+                        PartName = "Seat Block",
+                        PartCount = 1,
+                        BoardThickness = 3,
+                        Length = 18,
+                        Width = 24,
+                        PartNotes = "Power Carved to fit.",
+                        partBoardFoot = 9
+                    },
+
+                    new Models.FurniturePart {
+                        FurnitureIndex = 6,
+                        PartName = "Legs",
+                        PartCount = 4,
+                        BoardThickness = 2,
+                        Length = 20,
+                        Width = 2,
+                        PartNotes = "Mortised into Top",
+                        partBoardFoot = 2.223
+                    },
+
+                    new Models.FurniturePart {
+                        FurnitureIndex = 6,
+                        PartName = "Short Support Rails",
+                        PartCount = 2,
+                        BoardThickness = 2,
+                        Length = 18,
+                        Width = 2,
+                        PartNotes = "Drawboard to Legs",
+                        partBoardFoot = 1
+                    },
+
+                    new Models.FurniturePart {
+                        FurnitureIndex = 6,
+                        PartName = "Longer Support Rails",
+                        PartCount = 2,
+                        BoardThickness = 2,
+                        Length = 24,
+                        Width = 2,
+                        PartNotes = "Drawboard to Legs",
+                        partBoardFoot = 1.334
+                    },
+
               };
 
                 FurniturePartAddition.ForEach(p => context.FurnitureParts.Add(p));
