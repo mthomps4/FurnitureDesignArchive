@@ -75,7 +75,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.PartNotes, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.PartNotes, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.TextAreaFor(model => model.PartNotes, new { @class = "textArea-control" })
                         @Html.ValidationMessageFor(model => model.PartNotes, "", new { @class = "text-danger" })
                     </div>
                 </div>

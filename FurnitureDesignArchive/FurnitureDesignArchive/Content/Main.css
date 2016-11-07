@@ -41,6 +41,10 @@ header{
     width:100%;
 }
 
+.mainContainer{
+    margin-top:30px;
+}
+
 footer{
     margin-top:3em;
     margin-left:1em;
@@ -90,6 +94,11 @@ footer{
 }
 
 /*Details Page*/
+.container2{
+    width:90%;
+    margin:0 auto;
+}
+
 .furnitureDetailsContainer{
     width:90%;
     margin:0 auto;
@@ -106,7 +115,9 @@ footer{
 
 .furnitureTitleFlex{
     display:flex;
+    width:100%;
     align-items:center;
+    border-bottom:1px solid #aaa;
 }
 
 .furnitureTitle{
@@ -117,9 +128,6 @@ footer{
 }
 
 .furnitureEditButton{
-    display:flex;
-    align-items:center;
-    justify-content:center;
     opacity:.7;
 }
 
@@ -331,16 +339,28 @@ dl dd {
 }
 
 /*Media Query*/
-@media(min-width:390px){
-    .mainContainer{
-        margin:30px;
-    }
-}
 
 @media(min-width:425px){
     .FurniturePieceBox{
        width:60%;
+       display:flex;
+       justify-content:center;
        margin:60px auto;
+    }
+
+    .partsTable{
+       width:80%;
+       margin:0 auto;
+    }
+
+    .totalFoot{
+        width:80%;
+    }
+    
+    .deleteImage{
+        width:75%; 
+        display:flex;
+        margin:0 auto;
     }
 }
 
@@ -356,17 +376,91 @@ dl dd {
         width:45%;
         margin:30px auto;
     }
+
+    .nav-home{
+        margin-left:1.5em;
+    }
+
+    .nav-list{
+        margin-right:1.5em;
+    }
+
+    footer p{
+        margin-left:1em;
+    }
+
 }
 
 @media(min-width:725px){
+
+    .nav-home{
+        margin-left:2em;
+    }
+
+    .nav-list{
+        margin-right:2em;
+    }
+
     .FurniturePieceBox{
         width:28%;
     }
+    
+    .furnitureDetailsContainer{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+    }
+
+    .furnitureImageBlock{
+        width:43%;
+        height:250px;
+        display:flex;
+        align-items:center;
+        margin:20px;
+        margin-top:40px;
+    }
+
+    .furnitureDetails{
+        width:40%;
+        margin:20px;
+    }
+
+    .partContainer{
+        display:normal;
+        width:100%;
+    }
+
+    .partsTable{
+       width:100%;
+       display:flex;
+       justify-content:center;
+       margin:0 auto;
+    }
+
+    .partsTableMobile {
+        display:table-cell;
+    }
+
+    .totalFoot{
+        width:100%;
+        font-weight:700;
+    }
+
+    .editWrap{
+        width:50%;
+        margin:0 auto;
+    }
+
 }
 
 @media(min-width:930px){
     .FurniturePieceBox{
         margin:30px auto;
+    }
+
+    .furnitureImageBlock{
+        width:40%;
     }
 }
 
@@ -379,10 +473,18 @@ dl dd {
     .mainContainer{
         margin:0 auto;
     }
+
+    .furnitureImageBlock{
+        width:35%;
+    }
 }
 
 @media(min-width:1150px) {
     .FurniturePieceBox {
         width:18%;
+    }
+
+    .furnitureImageBlock{
+        width:30%;
     }
 }

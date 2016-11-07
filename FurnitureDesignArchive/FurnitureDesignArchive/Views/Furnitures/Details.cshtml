@@ -14,93 +14,91 @@
         }
     }
 }
-
-<div class="furnitureDetailsContainer">
-    <img class="furnitureImageBlock" src="@Html.DisplayFor(model => model.FurnitureImg)" alt="Shaker Side Table Image" />
-    <div class="furnitureDetails">
-        <div class="furnitureTitleFlex">
-            <h2 class="furnitureTitle">@Html.DisplayFor(model => model.FurnitureName) Details</h2>
-            <a class="furnitureEditButton" href="@Url.Action("Edit", "Furnitures", new { id = Model.FurnitureID })">- Edit</a>
-        </div>
-            <hr />
-        <div>
-            <dl class="dl-horizontal">
-                <dt>@Html.DisplayNameFor(model => model.buildLevel)</dt>
-                <dd>@Html.DisplayFor(model => model.buildLevel)</dd>
-                <dt>@Html.DisplayNameFor(model => model.furnitureType)</dt>
-                <dd>@Html.DisplayFor(model => model.furnitureType)</dd>
-                <dt>@Html.DisplayNameFor(model => model.AdditionalNotes)</dt>
-                <dd>@Html.DisplayFor(model => model.AdditionalNotes)</dd>
-                <dt>@Html.DisplayNameFor(model => model.CompletedBefore)</dt>
-                <dd>
-                    @if (Model.CompletedBefore == true)
-                    { <text>Yes</text> }
-                    else
-                    { <text>No</text> }
-                </dd>
-            </dl>
+<div class="container2">
+    <div class="furnitureTitleFlex">
+        <h2 class="furnitureTitle">@Html.DisplayFor(model => model.FurnitureName) Details</h2>
+        <a class="furnitureEditButton" href="@Url.Action("Edit", "Furnitures", new { id = Model.FurnitureID })">- Edit</a>
+    </div>
+    <div class="furnitureDetailsContainer">
+        <img class="furnitureImageBlock" src="@Html.DisplayFor(model => model.FurnitureImg)" alt="Shaker Side Table Image" />
+        <div class="furnitureDetails">
+            <div>
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.buildLevel)</dt>
+                    <dd>@Html.DisplayFor(model => model.buildLevel)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.furnitureType)</dt>
+                    <dd>@Html.DisplayFor(model => model.furnitureType)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.AdditionalNotes)</dt>
+                    <dd>@Html.DisplayFor(model => model.AdditionalNotes)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.CompletedBefore)</dt>
+                    <dd>
+                        @if (Model.CompletedBefore == true)
+                        { <text>Yes</text> }
+                        else
+                        { <text>No</text> }
+                    </dd>
+                </dl>
+            </div>
         </div>
     </div>
 
     <hr />
-    <div class="flexPartTitle">
-        <h4> Furniture Parts List </h4>
-        <a href="@Url.Action("Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName })">+ Add Part</a>
-    </div>
-    <hr />
-
-    <div class="partsTable">
-        <table>
-            <tr>
-                <th>Part Name</th>
-                <th class="partsTableMobile">Width</th>
-                <th class="partsTableMobile">Length</th>
-                <th class="partsTableMobile">Thickness</th>
-                <th>Count</th>
-                <th>Board Foot</th>
-                <th> </th>
-            </tr>
+    <div class="partContainer">
+        <div class="flexPartTitle">
+            <h4> Furniture Parts List </h4>
+            <a href="@Url.Action("Create", "FurnitureParts", new { Model.FurnitureID, Model.FurnitureName })">+ Add Part</a>
+        </div>
+        <hr />
+        <div class="partsTable">
+            <table>
+                <tr>
+                    <th>Part Name</th>
+                    <th class="partsTableMobile">Width</th>
+                    <th class="partsTableMobile">Length</th>
+                    <th class="partsTableMobile">Thickness</th>
+                    <th>Count</th>
+                    <th>Board Foot</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                @{
+                    var getParts = ViewBag.Parts;//From Controller Furnitures/Details
+                    foreach (var part in getParts)
+                    {
+                        int id = part.FurniturePartId;
+                        if (part.FurnitureIndex == Model.FurnitureID)
+                        {
+                            <tr>
+                                <td>@part.PartName</td>
+                                <td class="partsTableMobile">@part.Width"</td>
+                                <td class="partsTableMobile">@part.Length"</td>
+                                <td class="partsTableMobile">@part.BoardThickness"</td>
+                                <td>@part.PartCount</td>
+                                <td>@part.partBoardFoot'</td>
+                                <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
+                                <td>@Html.ActionLink("Delete", "Delete", "FurnitureParts", new { id }, null)</td>
+                            </tr>
+                        }
+                    }
+                }
+            </table>
+        </div>
+        <p class="totalFoot"><b><i>Total Board Foot: @TotalBoardFoot'</i></b></p>
+        <hr />
+        <h4 class="partNotesTitle">Additional Part Notes</h4>
+        <div class="partNotes">
             @{
-                var getParts = ViewBag.Parts;//From Controller Furnitures/Details
                 foreach (var part in getParts)
                 {
-                    int id = part.FurniturePartId;
                     if (part.FurnitureIndex == Model.FurnitureID)
                     {
-                        <tr>
-                            <td>@part.PartName</td>
-                            <td class="partsTableMobile">@part.Width"</td>
-                            <td class="partsTableMobile">@part.Length"</td>
-                            <td class="partsTableMobile">@part.BoardThickness"</td>
-                            <td>@part.PartCount</td>
-                            <td>@part.partBoardFoot'</td>
-                            <td>@Html.ActionLink("Edit", "Edit", "FurnitureParts", new { id }, null)</td>
-                            <td>@Html.ActionLink("Delete", "Delete", "FurnitureParts", new { id }, null)</td>
-                        </tr>
+                        <p><b>@part.PartName:</b> @part.PartNotes</p>
                     }
                 }
             }
-        </table>
+        </div>
     </div>
-    <p class="totalFoot"><b><i>Total Board Foot: @TotalBoardFoot'</i></b></p>
-        
-    <hr />
-
-    <h4 class="partNotesTitle">Additional Part Notes</h4>
-    <div class="partNotes">
-        @{
-            foreach (var part in getParts)
-            {
-                if (part.FurnitureIndex == Model.FurnitureID)
-                {
-                    <p><b>@part.PartName:</b> @part.PartNotes</p>
-                }
-            }
-        }
+    <div class="deleteContainer">
+        <a class="delete" href="@Url.Action("Delete", "Furnitures", new { id = Model.FurnitureID })">Remove Furniture Piece</a>
     </div>
-
-</div>
-
-<div class="deleteContainer">
-   <a class="delete" href="@Url.Action("Delete", "Furnitures", new { id = Model.FurnitureID })">Remove Furniture Piece</a>
 </div>
